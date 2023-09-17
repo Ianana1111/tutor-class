@@ -70,20 +70,20 @@ using namespace std;
 
 int main(){
     int a, b, c;
-    cin >> b >> a >> c;
+    cin >> b >> a >> c; // a 是列數 b是行數 c是要找的值
     b--;
-    int count = 0, sum = 0;
+    int count = 0, sum = 0;  // 紀錄現在的量
     while(1){
-        if(sum+a>=c){
+        if(sum+a>=c){ // 如果sum+a大於等於c 代表現在檢查的這列確定會遇到c
             for(int i=0; i<=a; i++){
-                if(sum+i == c){
+                if(sum+i == c){ 
                     cout << count+1 << ' ' << count + i << '\n';
                     return 0;
                 }
             }
         }
         sum+=a;
-        a--;
+        a--; //扣掉1 下次回圈加的就是少一的a
         if(sum+b>=c){
             for(int i=0; i<=b; i++){
                 if(sum+i == c){
