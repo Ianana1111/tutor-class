@@ -32,12 +32,14 @@ int main() {
             record[count++] = double(wheel[j]/crank[i]);
         }
     }
+
     // 因為變速可以調任和速度，意味著可以直接sort好，再從小到大看可不可以達成題目敘述
     selection_sort(record, count);
 
     // 若後一個前後齒輪配對所形成的節奏與前一個配對的比例關係大於p，直接輸出要換齒輪，並return 0;
     for(int i=0; i<count-1; i++){
         if((record[i+1]/record[i])-1 > p){
+            cout << record[i+1] << " " << record[i] << '\n';
             cout << "Time to change gears!" <<'\n';
             return 0;
         }
