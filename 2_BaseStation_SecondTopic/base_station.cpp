@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <stack>
 #include <algorithm>
 
 using namespace std;
@@ -46,6 +48,7 @@ int main(){
         double r = house[size-1] - house[0] + 1;
         int mid = 0;
         while(l != r-1){
+
             mid = (r+l)/2;
             bool check = find(mid, num_base);
             if(check) r = mid;
